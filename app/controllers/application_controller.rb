@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
       if @attr_type == "id"
         params.first[1].to_i
       else
-        params.first[0]
+        params.first[1]
       end
     end
 end
