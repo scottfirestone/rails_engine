@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
 
   private
     def set_attr_val(params)
-      if @attr_type == "id"
+      if ["id", "quantity", "unit_price", "item_id", "invoice_id", "customer_id", "merchant_id"].include?(@attr_type)
         params.first[1].to_i
       else
         params.first[1]
