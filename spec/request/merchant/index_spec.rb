@@ -6,7 +6,7 @@ RSpec.describe "Merchant index", :type => :request do
 
     get "/api/v1/merchants"
 
-    json = JSON.parse(response.body, symbolize_keys: true)
+    json = parse(response)
 
     expect(response).to be_success
     expect(json.length).to eq(10)
