@@ -27,3 +27,7 @@ group :development do
   gem 'spring'
   gem 'quiet_assets'
 end
+
+group :test do
+  gem 'simplecov'
+end
