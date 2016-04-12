@@ -4,7 +4,7 @@ RSpec.describe "Merchant index", :type => :request do
   it "returns all of the merchants" do
     FactoryGirl.create_list(:merchant, 10)
 
-    get "/api/v1/merchants"
+    get "/api/v1/merchants.json"
 
     json = parse(response)
 

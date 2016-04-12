@@ -4,7 +4,7 @@ RSpec.describe "Invoice index", :type => :request do
   it "returns all of the invoices" do
     FactoryGirl.create_list(:invoice, 10)
 
-    get "/api/v1/invoices"
+    get "/api/v1/invoices.json"
 
     json = parse(response)
 

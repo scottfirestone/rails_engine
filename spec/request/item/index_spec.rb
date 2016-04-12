@@ -4,7 +4,7 @@ RSpec.describe "Item index", :type => :request do
   it "returns all of the items" do
     FactoryGirl.create_list(:item, 10)
 
-    get "/api/v1/items"
+    get "/api/v1/items.json"
 
     json = parse(response)
 
