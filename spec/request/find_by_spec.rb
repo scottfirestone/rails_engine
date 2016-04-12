@@ -30,4 +30,19 @@ RSpec.describe "Find by", :type => :request do
     expect(json["last_name"]).to eq(customer.last_name)
     expect(json['private_attr']).to eq(nil)
   end
+
+  it "finds the customer by last_name" do
+    customer = FactoryGirl.create(:customer)
+
+    get "/api/v1/customer/find?last_name=#{customer.last_name}"
+
+    json = parse(response)
+
+    expect(response).to be_success
+    expect(json.keys).to eq(customer.attributes.keys)
+    expect(json["id"]).to eq(customer.id)
+    expect(json["first_name"]).to eq(customer.first_name)
+    expect(json["last_name"]).to eq(customer.last_name)
+    expect(json['private_attr']).to eq(nil)
+  end
 end
