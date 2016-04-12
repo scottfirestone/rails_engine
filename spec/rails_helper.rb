@@ -89,5 +89,5 @@ Shoulda::Matchers.configure do |config|
 end
 
 def parse(response)
-  JSON.parse(response.body, symbolize_keys: true)
+  JSON.parse(response.body, symbolize_names: false)
 end
