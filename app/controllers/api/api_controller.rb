@@ -1,6 +1,6 @@
 module Api
   class ApiController < ApplicationController
-    def attr_mapper(params)
+    def attr_mapper
       @model      = params[:model].singularize.classify.constantize
       @attr_type  = params.first[0]
       @attr_val   = set_attr_val(params)

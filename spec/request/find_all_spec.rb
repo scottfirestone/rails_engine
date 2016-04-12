@@ -10,7 +10,6 @@ RSpec.describe "Find all", :type => :request do
     get "/api/v1/customers/find_all?first_name=Scott"
 
     json = parse(response)
-
     expect(response).to be_success
     expect(json.length).to eq(2)
     expect(json.first["first_name"]).to eq("Scott")

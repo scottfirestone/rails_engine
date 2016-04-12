@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
-      get "/:model/find" => "find#show"
+      get "/:model/find"     => "find#show"
       get "/:model/find_all" => "find#index"
+      get "/:model/random"   => "random#show"
 
       resources :merchants,     only: [:index, :show]
       resources :customers,     only: [:index, :show]
