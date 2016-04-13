@@ -8,7 +8,7 @@ module Api
       end
 
       def show
-        respond_with InvoiceItem.find(params[:id])
+        respond_with InvoiceItem.find(params[:id]), root: false
       end
     end
   end
