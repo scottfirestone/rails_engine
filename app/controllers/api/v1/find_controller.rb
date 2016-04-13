@@ -5,11 +5,11 @@ module Api
       respond_to :json
 
       def show
-        respond_with @model.find_by("#{@attr_type}" => "#{@attr_val}")
+        respond_with @model.find_by("#{@attr_type}" => "#{@attr_val}"), root: false
       end
 
       def index
-        respond_with @model.where("#{@attr_type}" => "#{@attr_val}")
+        respond_with @model.where("#{@attr_type}" => "#{@attr_val}"), root: false
       end
     end
   end

@@ -4,7 +4,7 @@ module Api
       respond_to :json
 
       def index
-        respond_with Customer.all
+        respond_with Customer.all, root: false
       end
 
       def show

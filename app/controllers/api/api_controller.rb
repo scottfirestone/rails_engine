@@ -8,11 +8,17 @@ module Api
 
     private
       def set_attr_val(params)
-        if ["id", "quantity", "unit_price", "item_id", "invoice_id", "customer_id", "merchant_id"].include?(@attr_type)
+        if ["id", "quantity", "item_id", "invoice_id", "customer_id", "merchant_id"].include?(@attr_type)
           params.first[1].to_i
+        elsif @attr_type == "unit_price"
+          convert_to_cents(params.first[1])
         else
           params.first[1]
         end
+      end
+
+      def convert_to_cents(unit_price_param)
+        unit_price_param.to_f*100
       end
   end
 end

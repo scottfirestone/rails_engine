@@ -62,4 +62,21 @@ RSpec.describe "Find by", :type => :request do
     expect(json["invoice_id"]).to eq(invoice_item.invoice_id)
     expect(json['private_attr']).to eq(nil)
   end
+
+  it "finds the item by unit price" do
+    item = FactoryGirl.create(:item)
+    item.update_attribute(:unit_price, 1050)
+
+    get "/api/v1/item/find?unit_price=10.50"
+
+    json = parse(response)
+    expect(response).to be_success
+    expect(json.keys).to eq(item.attributes.keys)
+    expect(json["id"]).to eq(item.id)
+    expect(json["name"]).to eq(item.name)
+    expect(json["description"]).to eq(item.description)
+    expect(json["unit_price"]).to eq(item.unit_price)
+    expect(json["merchant_id"]).to eq(item.merchant_id)
+    expect(json['private_attr']).to eq(nil)
+  end
 end

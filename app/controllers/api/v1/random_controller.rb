@@ -5,7 +5,6 @@ module Api
 
       def show
         attr_mapper
-      # binding.pry
         respond_with @model.order("RANDOM()").first
       end
     end

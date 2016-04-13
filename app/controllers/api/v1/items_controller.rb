@@ -4,11 +4,11 @@ module Api
       respond_to :json
 
       def index
-        respond_with Item.all
+        respond_with Item.all, root: false
       end
 
       def show
-        respond_with Item.find(params[:id])
+        respond_with Item.find(params[:id]), root: false
       end
     end
   end

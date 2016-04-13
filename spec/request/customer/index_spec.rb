@@ -5,7 +5,7 @@ RSpec.describe "Customer index", :type => :request do
     FactoryGirl.create_list(:customer, 10)
 
     get "/api/v1/customers.json"
-
+    
     json = parse(response)
 
     expect(response).to be_success
