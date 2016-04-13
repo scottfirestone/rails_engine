@@ -12,7 +12,6 @@ RSpec.describe "Transaction show", :type => :request do
     expect(json.keys).to eq(transaction.attributes.keys)
     expect(json["id"]).to eq(transaction.id)
     expect(json["credit_card_number"]).to eq(transaction.credit_card_number)
-    expect(json["credit_card_expiration_date"]).to eq(transaction.credit_card_expiration_date)
     expect(json["result"]).to eq(transaction.result)
     expect(json["invoice_id"]).to eq(transaction.invoice_id)
     expect(json['private_attr']).to eq(nil)

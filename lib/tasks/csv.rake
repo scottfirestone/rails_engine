@@ -50,7 +50,6 @@ namespace :csv do
     CSV.foreach("data/transactions.csv", headers: true) do |row|
       Transaction.create(
         :credit_card_number => row["credit_card_number"],
-        :credit_card_expiration_date => row["credit_card_expiration_date"],
         :result => row["result"],
         :invoice_id => row["invoice_id"],
         :created_at => row["created_at"],
