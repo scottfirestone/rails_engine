@@ -5,13 +5,8 @@ module Api
         respond_to :json
 
         def show
-          revenue = Merchant.find(params[:id]).
-            invoices.
-            joins(:transactions, :invoice_items).
-            where(transactions: { result: "success" }).
-            sum("invoice_items.unit_price * invoice_items.quantity")
-          revenue = '%.02f' % (revenue / 100.0)
-          response = { "revenue" => "#{revenue}"}
+          response = Merchant.find(params[:id]).revenue
+          binding.pry
           respond_with response
         end
       end
