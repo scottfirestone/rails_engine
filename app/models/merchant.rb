@@ -10,4 +10,15 @@ class Merchant < ActiveRecord::Base
     formatted = '%.02f' % (unformatted / 100.0)
     { "revenue" => "#{formatted}"}
   end
+
+#eager loading for customers??
+  def customers_with_pending_invoices
+    invoices = self.invoices.
+      joins(:transactions).
+      where(transactions: { result: "failed" })
+
+    invoices.map do |invoice|
+      invoice.customer
+    end.uniq
+  end
 end

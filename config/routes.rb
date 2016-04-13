@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       # end
       namespace :merchants do
         get "/:id/revenue", to: "revenue#show"
+        get "/:id/customers_with_pending_invoices", to: "customers_with_pending_invoices#show"
       end
       get "/:model/find"     => "find#show"
       get "/:model/find_all" => "find#index"

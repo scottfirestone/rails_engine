@@ -6,7 +6,6 @@ module Api
 
         def show
           response = Merchant.find(params[:id]).revenue
-          binding.pry
           respond_with response
         end
       end
