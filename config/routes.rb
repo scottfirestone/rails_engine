@@ -4,6 +4,7 @@ Rails.application.routes.draw do
       get "/:model/find"     => "find#show"
       get "/:model/find_all" => "find#index"
       get "/:model/random"   => "random#show"
+      get "/:model/:id/:association" => "associations#show"
 
       resources :merchants,     only: [:index, :show]
       resources :customers,     only: [:index, :show]

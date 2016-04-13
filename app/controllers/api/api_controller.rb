@@ -6,6 +6,12 @@ module Api
       @attr_val   = set_attr_val(params)
     end
 
+    def association_path_finder
+      @model = params["model"].singularize.classify.constantize
+      @id = params["id"].to_i
+      @association = params["association"]
+    end
+
     private
       def set_attr_val(params)
         if ["id", "quantity", "item_id", "invoice_id", "customer_id", "merchant_id"].include?(@attr_type)

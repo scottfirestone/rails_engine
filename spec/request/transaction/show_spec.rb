@@ -2,6 +2,7 @@ require "rails_helper"
 
 RSpec.describe "Transaction show", :type => :request do
   it "returns the transactions" do
+    FactoryGirl.create(:invoice)
     transaction = FactoryGirl.create(:transaction)
 
     get "/api/v1/transactions/#{transaction.id}.json"
