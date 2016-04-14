@@ -1,19 +1,23 @@
 require "rails_helper"
 
-RSpec.describe "Single merchant logic endpoint" do
-
+RSpec.describe "Single merchant logic endpoint", :type => :request do
   it "returns total revenue for that merchant" do
-    get "/api/v1/merchants/:id/revenue"
+    customer = create(:customer)
+    merchant = create(:merchant)
+    item     = create(:item)
+    item.update_attribute(:merchant_id, merchant.id)
+    invoice  = merchant.invoices.create(status: "shipped", customer_id: customer.id)
+    Transaction.create(credit_card_number: "123", result: "success", invoice_id: invoice.id)
+    InvoiceItem.create(quantity: 1,
+                        unit_price: item.unit_price,
+                        item_id: item.id,
+                        invoice_id: invoice.id)
 
-    #find that merchant. get all invoices for that merchant associated with transactions where result is success.
-    #get all the invoice items for those invoices and calculate the quantity times price, sum the total.
+    get "/api/v1/merchants/#{merchant.id}/revenue"
 
+    json = parse(response)
+
+    expect(response).to be_success
+    expect(json["revenue"]).to eq("0.47")
   end
 end
-# GET /api/v1/merchants/:id/revenue returns the total revenue for that merchant across all transactions
-# GET /api/v1/merchants/:id/revenue?date=x returns the total revenue for that merchant for a specific invoice date x
-# GET /api/v1/merchants/:id/favorite_customer returns the customer who has conducted the most total number of successful transactions.
-# GET /api/v1/merchants/:id/customers_with_pending_invoices returns a collection of customers which have pending (unpaid) invoices
-# NOTE: Failed charges should never be counted in revenue totals or statistics.
-#
-# NOTE: All revenues should be reported as a float with two decimal places.
