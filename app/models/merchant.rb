@@ -10,7 +10,7 @@ class Merchant < ActiveRecord::Base
       group(:customer_id).
       order('count_id desc').
       count('id').
-      first
+      first[0]
   end
 
   def revenue
@@ -20,19 +20,6 @@ class Merchant < ActiveRecord::Base
       sum("invoice_items.unit_price * invoice_items.quantity")
     formatted = '%.02f' % (unformatted / 100.0)
     { "revenue" => "#{formatted}"}
-  end
-
-  def self.revenue_by_date(date)
-    map do |merchant|
-      unformatted = merchant.
-        invoices.
-        where(created_at: date).
-        joins(:transactions, :invoice_items).
-        where(transactions: { result: "success" }).
-        sum("invoice_items.unit_price * invoice_items.quantity")
-      formatted = '%.02f' % (unformatted / 100.0)
-      { "revenue" => "#{formatted}"}
-    end.reduce(:+)
   end
 
   def revenue_by_date(date)
@@ -55,8 +42,4 @@ class Merchant < ActiveRecord::Base
       invoice.customer
     end.uniq
   end
-  private
-    def successful_transactions
-      self.invoices.joins(:transactions.where(transactions: { result: "success"}))
-    end
 end

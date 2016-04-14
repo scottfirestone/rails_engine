@@ -4,7 +4,7 @@ class Customer < ActiveRecord::Base
   has_many :merchants, through: :invoices
 
   def favorite_merchant
-    customer = self.invoices.joins(:transactions).
+    self.invoices.joins(:transactions).
       where(transactions: { result: "success" }).
       group(:merchant_id).
       order('count_id desc').

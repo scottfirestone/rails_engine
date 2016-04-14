@@ -5,8 +5,9 @@ module Api
         respond_to :json
 
         def show
-          response = Merchant.find(params[:id]).favorite_customer
-          respond_with response, root: false
+          favorite_customer_id = Merchant.find(params[:id]).favorite_customer
+          customer = Customer.find(favorite_customer_id)
+          respond_with customer, root: false
         end
       end
     end

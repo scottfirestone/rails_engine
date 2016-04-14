@@ -24,7 +24,7 @@ module Api
       end
 
       def convert_to_cents(unit_price_param)
-        unit_price_param.to_f*100
+        BigDecimal.new(unit_price_param) * 100
       end
   end
 end
