@@ -6,6 +6,10 @@
         null,
         1,
         1,
+        1,
+        1,
+        1,
+        null,
         null
       ],
       "/Users/scottfirestone/Turing/3module/rails_engine/spec/rails_helper.rb": [
@@ -44,7 +48,7 @@
         null,
         null,
         1,
-        22,
+        28,
         null,
         null,
         null,
@@ -54,12 +58,12 @@
         null,
         null,
         1,
-        22,
+        28,
         null,
         null,
         null,
         1,
-        22,
+        28,
         null,
         null,
         1,
@@ -399,6 +403,9 @@
         null,
         1,
         1,
+        1,
+        1,
+        null,
         null
       ],
       "/Users/scottfirestone/Turing/3module/rails_engine/app/models/invoice_item.rb": [
@@ -412,6 +419,12 @@
         null,
         1,
         1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
         null
       ],
       "/Users/scottfirestone/Turing/3module/rails_engine/app/models/invoice.rb": [
@@ -429,6 +442,10 @@
         null,
         1,
         1,
+        1,
+        1,
+        1,
+        null,
         null
       ],
       "/Users/scottfirestone/Turing/3module/rails_engine/app/models/item.rb": [
@@ -453,6 +470,11 @@
         null,
         1,
         1,
+        1,
+        1,
+        1,
+        1,
+        null,
         null
       ],
       "/Users/scottfirestone/Turing/3module/rails_engine/app/models/merchant.rb": [
@@ -507,10 +529,11 @@
         null,
         1,
         1,
+        1,
+        null,
         null
       ],
       "/Users/scottfirestone/Turing/3module/rails_engine/app/models/transaction.rb": [
-        1,
         1,
         1,
         null
@@ -643,14 +666,15 @@
         1,
         null,
         1,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
         null,
         null,
         1,
@@ -660,14 +684,14 @@
         1,
         null,
         1,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
         null,
         null
       ],
@@ -989,7 +1013,16 @@
         1,
         null,
         1,
-        12,
+        13,
+        null,
+        null
+      ],
+      "/Users/scottfirestone/Turing/3module/rails_engine/app/serializers/item_serializer.rb": [
+        1,
+        1,
+        null,
+        1,
+        15,
         null,
         null
       ],
@@ -1041,15 +1074,6 @@
         1,
         null,
         null,
-        null,
-        null
-      ],
-      "/Users/scottfirestone/Turing/3module/rails_engine/app/serializers/item_serializer.rb": [
-        1,
-        1,
-        null,
-        1,
-        14,
         null,
         null
       ],
@@ -1116,6 +1140,6 @@
         null
       ]
     },
-    "timestamp": 1460612241
+    "timestamp": 1460616966
   }
 }

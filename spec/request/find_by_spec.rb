@@ -66,9 +66,10 @@ RSpec.describe "Find by", :type => :request do
     item = FactoryGirl.create(:item)
     item.update_attribute(:unit_price, 1050)
 
-    get "/api/v1/item/find?unit_price='10.50'"
+    get "/api/v1/item/find?unit_price=10.50"
 
     json = parse(response)
+
     expect(response).to be_success
     expect(json.keys).to eq(item.attributes.keys)
     expect(json["id"]).to eq(item.id)
