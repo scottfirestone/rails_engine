@@ -12,11 +12,13 @@ Bundle those gems:
 
 To set up the database run:
 
-`$ rake db:{create, migrate}`
+`$ rake db:{create,migrate}`
 
 To populate the database with the csv's included in this repository, run:
 
 `$ rake csv:load_to_db`
+
+Now take this time to consider your life choices.
 
 ##Testing
 
