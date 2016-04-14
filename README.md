@@ -2,7 +2,7 @@
 
 To use, clone down this repo. Run: 
 
-`bundle install`
+`bundle install` 
 
 To set up the database run:
 
