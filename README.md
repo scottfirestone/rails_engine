@@ -1,8 +1,12 @@
 #Rails Engine
 
-To use, clone down this repo. Run: 
+To use, clone down this repo:
 
-`bundle install` 
+'$ git clone https://github.com/scottfirestone/rails_engine.git'
+
+Bundle those gems: 
+
+`$ bundle install` 
 
 To set up the database run:
 
