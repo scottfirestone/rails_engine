@@ -28,4 +28,4 @@ Testing suite built in RSpec. To run:
 
 ##Endpoints
 
-This is all about endpoints. Consult the [project spec](https://github.com/turingschool/lesson_plans/blob/master/ruby_03-professional_rails_applications/rails_engine.md) for more information.
+This is all about endpoints. Consult the [project spec](https://github.com/turingschool/lesson_plans/blob/master/ruby_03-professional_rails_applications/rails_engine.md) for more information. Don't try any endpoints not found on that spec. Please.
